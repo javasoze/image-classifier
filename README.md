@@ -50,22 +50,27 @@ Model will be output to models directory
 
 ## Prediction
 
-Given a new image to predict, e.g. myimage.jpeg:
+Given a new image to predict, e.g. kitten.jpeg:
 
-Let's first copy it to the `models` directory we created earlier
+Let's first create an input directory:
+```
+mkdir input
+```
+
+Now copy it to the `input` directory we just created
 
 again, run the classifier virtual machine:
 ```
 docker run \
 -it \
---mount type=bind,source="$(pwd)"/train,target=/train \
+--mount type=bind,source="$(pwd)"/input,target=/input \
 --mount type=bind,source="$(pwd)"/models,target=/models \
 javasoze/image-classifier bash
 ```
 once inside virtual machine's shell:
 ```
-python predict.py -m /models -f /models/myimage.jpeg
+python predict.py -m /models -f /input/kitten.jpeg
 ```
 
 ## Credits
-* Divyanshu Sundriyal's Blog (https://medium.com/@divyanshuDeveloper/a-simple-animal-classifier-from-scratch-using-keras-61ef0edfcb1f)
+* Model and sample code taken from Divyanshu Sundriyal's Blog (https://medium.com/@divyanshuDeveloper/a-simple-animal-classifier-from-scratch-using-keras-61ef0edfcb1f)
