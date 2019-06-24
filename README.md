@@ -66,3 +66,6 @@ once inside virtual machine's shell:
 ```
 python predict.py -m /models -f /models/myimage.jpeg
 ```
+
+## Credits
+* Divyanshu Sundriyal's Blog (https://medium.com/@divyanshuDeveloper/a-simple-animal-classifier-from-scratch-using-keras-61ef0edfcb1f)
