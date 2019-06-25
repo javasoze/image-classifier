@@ -63,8 +63,8 @@ again, run the classifier virtual machine:
 ```
 docker run \
 -it \
---mount type=bind,source="$(pwd)"/input,target=/input \
---mount type=bind,source="$(pwd)"/models,target=/models \
+--mount type=bind,source="$(pwd)"/input,target=/input,readonly \
+--mount type=bind,source="$(pwd)"/models,target=/models,readonly \
 javasoze/image-classifier bash
 ```
 once inside virtual machine's shell:

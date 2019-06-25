@@ -46,13 +46,11 @@ def main():
                     extension = os.path.splitext(img)[1]            
                     if extension in ext:
                         imgfile=os.path.join(pathname, img)
-                        #imag=cv2.imread(imgfile)
-                        #img_from_ar = Image.fromarray(imag, 'RGB')
                         resized_image = convert_to_array(imgfile)
-                        data.append(np.array(resized_image))
+                        data.append(resized_image)
                         labels.append(count)
                         labelnames[str(count)]=f
-                count = count + 1
+                count += 1
 
         with open(os.path.join(model_location,"label.json"), "w") as json_file:
             json_file.write(json.dumps(labelnames))
