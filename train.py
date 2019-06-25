@@ -14,7 +14,7 @@ from keras.models import Sequential
 from keras.layers import Conv2D,MaxPooling2D,Dense,Flatten,Dropout
 
 # supported extensions
-ext = {".jpeg", ".png"}
+ext = {".jpeg", ".jpg", ".png"}
 parser = argparse.ArgumentParser(description='image classifier trainer')
 parser.add_argument("-d", "--data", type=str, default=None, required=True,
                     help="training data location")
